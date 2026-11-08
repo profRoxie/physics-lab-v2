@@ -1,1 +1,1 @@
-wowie look at that readme
+Instructor Baker's classes Python Notebook.
