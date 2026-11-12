@@ -25,6 +25,11 @@ jobs:
         run: |
           cp README.md content
           jupyter lite build --contents content --output-dir dist
+      - name: Upload portable site package
+        uses: actions/upload-artifact@v4
+        with:
+          name: jupyterlite-site
+          path: ./dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
