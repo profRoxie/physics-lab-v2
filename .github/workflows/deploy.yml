@@ -25,6 +25,15 @@ jobs:
         run: |
           cp README.md content
           jupyter lite build --contents content --output-dir dist
+      - name: Create downloadable ZIP
+        run: |
+          cd dist
+          zip -r ../physics-lab-offline.zip .
+      - name: Upload offline ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: physics-lab-offline
+          path: physics-lab-offline.zip
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
